@@ -90,7 +90,7 @@ struct shape * shape_add_transition(struct shape * s, char const * member) {
     if (s->num_items == s->capacity)
         s = shape_grow(s);
 
-    size_t old_size = sizeof(struct shape) + 
+    size_t old_size = sizeof(struct shape) +
         s->num_items * sizeof(struct member);
     size_t new_size = old_size + sizeof(struct member);
 
@@ -119,7 +119,7 @@ struct shape * shape_add_transition(struct shape * s, char const * member) {
 }
 
 struct obj * obj_change_shape(struct obj * o, struct shape * ns) {
-    size_t old_size = sizeof(struct obj) 
+    size_t old_size = sizeof(struct obj)
         + sizeof(val_t) * o->shape->num_data_items;
     size_t new_size = old_size + sizeof(val_t);
 
@@ -234,7 +234,7 @@ int main(void) {
     struct obj * o = obj_alloc();
 
     printf( "alloc %p\n", o );
-    
+
     o = obj_set_member(o, "x", val_from_int(42));
     o = obj_set_member(o, "x", val_from_int(12));
 
