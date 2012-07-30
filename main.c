@@ -47,7 +47,7 @@ struct obj {
 
 static struct shape * root_shape;
 
-struct obj * obj_alloc() {
+struct obj * obj_alloc(void) {
     struct obj * o = malloc(sizeof(struct obj));
     o->shape = root_shape;
     o->redir = 0;
